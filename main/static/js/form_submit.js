@@ -6,7 +6,9 @@ async function submitForm(event) {
 
     const codeBlock = document.getElementById('editableCode');
     const hiddenCodeInput = document.getElementById('hiddenCode');
-    const outputBlock = document.getElementById('ouput')
+    const submitButton = document.getElementById('submit')
+
+    submitButton.disabled = true
 
     // Get the code content from the editable <pre><code> block
     hiddenCodeInput.value = codeBlock.innerText; // Use innerText to get plain text

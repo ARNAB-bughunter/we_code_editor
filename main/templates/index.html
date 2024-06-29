@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Submit JSON Data</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-    <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>WELCOME</h1>
+    <form id="jsonForm" action="/execute" method="POST">
+      <input type="hidden" name="code" id="hiddenCode" />
+      <input type="submit" id="submit" value="RUN" />
+    </form>
 
-    
-    </head>
-        <body>
-            <h1>WELCOME</h1>
-      
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-6">
                 <pre><code id="editableCode" class="language-python" contenteditable="true">print("CODE")</code></pre>
+            </div>
+            <div class="col-6">
                 <textarea id="ouput"></textarea>
+            </div>
+        </div>
+    </div>
 
-                <form id="jsonForm" action="/execute" method="POST">
-                    <input type="hidden" name="code" id="hiddenCode">
-                    <input type="submit" value="RUN">
-                </form>
-            <script type="module" src="{{ url_for('static', filename='js/form_submit.js') }}"></script>
-            <script src="{{ url_for('static', filename='js/code_editor.js') }}"></script>
-            <!-- <script type="module" src="{{ url_for('static', filename='js/notification.js') }}"></script> -->
 
-        </body>
+    <script type="module" src="{{ url_for('static', filename='js/form_submit.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/code_editor.js') }}"></script>
+  </body>
 </html>

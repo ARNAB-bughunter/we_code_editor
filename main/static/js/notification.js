@@ -15,6 +15,8 @@ export function connectWebSocket(id_) {
 
     socket.addEventListener('close', event => {
         console.log("WebSocket is closed now.");
+        const submitButton = document.getElementById('submit')
+        submitButton.disabled = false
     });
 }
 

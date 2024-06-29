@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container-xxl {
+    background-color: blue;
+    padding: 1rem;
+    min-height: 90vh;
+    max-height: 10vh;
+}
+
+code {
+    min-height: 100%;
+    overflow: auto;
+
+}
+
+textarea {
+    resize: none;
+    min-width: 100%;
+}
