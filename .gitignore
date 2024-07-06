@@ -162,5 +162,4 @@ cython_debug/
 #.idea/
 
 # custom
-file_upload_service/temp_uploads
-video_segmentation_service/video_output
+code_executer/src/service/user_code.py
